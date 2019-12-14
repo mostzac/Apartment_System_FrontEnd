@@ -1,5 +1,5 @@
 var stompClient = null;
-var token = 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNTczOTMzNTc3LCJpc3MiOiJpby5hc2NlbmRpbmciLCJleHAiOjE1NzQwMTk5NzcsImFsbG93ZWRSZWFkUmVzb3VyY2VzIjoiL2FwaS91c2Vycy91c2VyLC9hcGkvcGFja3MvcGFjayIsImFsbG93ZWRDcmVhdGVSZXNvdXJjZXMiOiIiLCJhbGxvd2VkVXBkYXRlUmVzb3VyY2VzIjoiIiwiYWxsb3dlZERlbGV0ZVJlc291cmNlcyI6IiJ9.GOI5mYBK32sfgCVPXC-_ftX8XGsEFLzNnQeVfllfieI';
+var token = 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIzIiwiaWF0IjoxNTc0ODg0NjI2LCJpc3MiOiJpby5hc2NlbmRpbmciLCJleHAiOjE1NzQ5NzEwMjYsImFsbG93ZWRSZWFkUmVzb3VyY2VzIjoiLyIsImFsbG93ZWRDcmVhdGVSZXNvdXJjZXMiOiIvIiwiYWxsb3dlZFVwZGF0ZVJlc291cmNlcyI6Ii8iLCJhbGxvd2VkRGVsZXRlUmVzb3VyY2VzIjoiLyJ9.mIAScxPD_-MVswe7PiLOpiSzuWMN9GVTXg997fm2Ti4';
 
 function setConnected(connected) {
     $("#connect").prop("disabled", connected);
@@ -14,7 +14,7 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS("http://localhost:8080/myWebSocket");
+    var socket = new SockJS("http://localhost:8080/myWebSocket?token="+token);
     stompClient = Stomp.over(socket);
         stompClient.connect({}, function (frame) {
         setConnected(true);
@@ -48,4 +48,9 @@ $(function () {
     $( "#connect" ).click(function() { connect(); });
     $( "#disconnect" ).click(function() { disconnect(); });
     $( "#send" ).click(function() { sendName(); });
+
+
+
+
+    //todo
 });

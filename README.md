@@ -36,7 +36,7 @@ and uncomment
 In this step, we are going to demostrate jquery DOM manipulation.
 please uncomment
 ```html
-<script type="text/javascript" src="./controller.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
 ```
 and comment out
 ```html

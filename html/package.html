@@ -22,7 +22,8 @@
 
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">Package Details</h1>
-    <p class="lead">Show all packages in the system</p>
+    <a class="btn btn-outline-primary" href="user.html">Back to users</a>
+    <p id="Pdisplay" class="lead" ></p>
 </div>
 
 <div class="container">
@@ -61,6 +62,20 @@
             }
         }
     }
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
+    }
+
+    document.getElementById("Pdisplay").innerHTML = "Show all packages in the system for " + getUrlVars()["uname"];
+    //
+    // function addPackage() {
+    //     window.location.href = "createPackage.html?uaccount=" + getUrlVars()["uaccount"];
+    // }
+
 </script>
 </body>
 </html>

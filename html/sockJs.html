@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Hello WebSocket</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous">
     <link href="../css/socket.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
@@ -15,25 +16,27 @@
     Javascript and reload this page!</h2></noscript>
 <div id="main-content" class="container">
     <div class="row">
-        <div class="col-md-6">This application has no explicit mapping for /error, so you are seeing this as a fallback.
+        <div class="col-md-6">Apartment Messages
             <form class="form-inline">
                 <div class="form-group">
                     <label for="connect">WebSocket connection:</label>
-                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
-                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    <button id="connect" class="btn btn-outline-primary" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-outline-primary" type="submit" disabled="disabled">Disconnect
                     </button>
                 </div>
             </form>
+            <div class="col-md-6">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="name">Your Message</label>
+                        <input type="text" id="name" class="form-control" placeholder="Type here...">
+                    </div>
+                    <button id="send" class="btn btn-outline-primary" type="submit">Send</button>
+                </form>
+            </div>
+            <a class="btn btn-outline-primary" href="user.html">Back to users</a>
         </div>
-        <div class="col-md-6">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="name">What is your name?</label>
-                    <input type="text" id="name" class="form-control" placeholder="Your name here...">
-                </div>
-                <button id="send" class="btn btn-default" type="submit">Send</button>
-            </form>
-        </div>
+
     </div>
     <div class="row">
         <div class="col-md-12">
